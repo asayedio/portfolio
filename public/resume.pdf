@@ -1,0 +1,10 @@
+# Place your resume PDF here
+
+To add your resume:
+1. Replace this file with your actual resume PDF
+2. Name it `resume.pdf`
+3. The "Download Resume" button on the site will link to this file
+
+You can also:
+- Use a different filename and update the link in `components/Hero.tsx`
+- Host your resume on an external service and update the link accordingly
