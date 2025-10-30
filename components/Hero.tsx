@@ -110,31 +110,36 @@ export default function Hero() {
 
           {/* Image/Avatar */}
           <motion.div
-     className="flex justify-center"
-      initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  >
+            className="flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="relative">
               <motion.div
-       className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary-400 to-blue-600 p-1"
-         initial={{ opacity: 0, scale: 0.8 }}
-   animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-          >
-     <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-      <Image
-    src="/avatar.jpg"
-             alt={profile.name}
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary-400 to-blue-600 p-1"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt={profile.name}
                     width={320}
-      height={320}
-     className="object-cover w-full h-full"
-         priority
-    />
-           </div>
-          </motion.div>
+                    height={320}
+                    className="object-cover w-full h-full"
+                    priority
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    sizes="(max-width: 768px) 256px, 320px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </motion.div>
 
-         {/* Floating badges */}
+              {/* Floating badges */}
               <motion.div
                 className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-lg"
                 initial={{ opacity: 0, scale: 0 }}
