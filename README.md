@@ -12,6 +12,24 @@ Or double-click: `setup-node.bat` to auto-install everything!
 
 ---
 
+## ?? Quick Deploy to Vercel with GitHub Actions
+
+Want automatic deployments? **Double-click `setup-wizard.bat`** or run:
+
+```powershell
+.\setup-wizard.ps1
+```
+
+This interactive wizard will:
+- ? Get your Vercel IDs
+- ? Guide you to add GitHub secrets
+- ? Set up automatic deployments
+- ? Trigger your first deployment
+
+**See:** [GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md) for detailed instructions.
+
+---
+
 ## Prerequisites
 
 Before you begin, you need to have Node.js installed on your computer.
@@ -55,7 +73,7 @@ Download and install Node.js directly from [nodejs.org](https://nodejs.org/) (ch
 - ? Optimized for performance
 - ? Accessible
 - ?? SEO optimized
-- ?? Smooth animations with Framer Motion
+- ? Smooth animations with Framer Motion
 
 ## Tech Stack
 
@@ -65,6 +83,7 @@ Download and install Node.js directly from [nodejs.org](https://nodejs.org/) (ch
 - **Animations:** Framer Motion
 - **Icons:** React Icons
 - **Theme:** next-themes
+- **Deployment:** Vercel (with GitHub Actions CI/CD)
 
 ## Getting Started
 
@@ -96,21 +115,40 @@ npm start
 
 ## Deployment
 
-This project is ready to be deployed on Vercel or Netlify.
+### Option 1: Automatic Deployment with GitHub Actions (Recommended) ??
 
-### Vercel (Recommended)
+Set up once, deploy automatically on every push!
+
+```powershell
+# Run the interactive setup wizard
+.\setup-wizard.ps1
+```
+
+Or see the complete guide: [GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md)
+
+**Available Helper Scripts:**
+- `setup-wizard.ps1` - Interactive setup (recommended)
+- `get-vercel-ids.ps1` - Get your Vercel IDs via API
+- `quick-deploy.ps1` - Deploy and get IDs in one step
+- `validate-setup.ps1` - Check your configuration
+
+**See:** [DEPLOYMENT-SCRIPTS-README.md](DEPLOYMENT-SCRIPTS-README.md) for script details.
+
+### Option 2: Manual Deployment to Vercel
 
 1. Push your code to GitHub
 2. Import your repository on [Vercel](https://vercel.com)
 3. Deploy with one click
 
-### Netlify
+### Option 3: Deploy to Netlify
 
 1. Push your code to GitHub
 2. Connect your repository on [Netlify](https://netlify.com)
 3. Configure build settings:
- - Build command: `npm run build`
+   - Build command: `npm run build`
    - Publish directory: `.next`
+
+**See:** [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Customization
 
@@ -131,6 +169,17 @@ Update your information in:
 ### Resume
 
 Place your resume PDF in `public/resume.pdf`
+
+## ?? Documentation
+
+- **[START-HERE.md](START-HERE.md)** - First time setup guide
+- **[GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md)** - Automatic deployment setup
+- **[DEPLOYMENT-SCRIPTS-README.md](DEPLOYMENT-SCRIPTS-README.md)** - Helper scripts documentation
+- **[GET-VERCEL-IDS.md](GET-VERCEL-IDS.md)** - Quick reference for Vercel IDs
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Manual deployment guide
+- **[CUSTOMIZATION.md](CUSTOMIZATION.md)** - Customization guide
+- **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** - Project structure explained
+- **[NODE-INSTALLATION-GUIDE.md](NODE-INSTALLATION-GUIDE.md)** - Node.js installation help
 
 ## License
 
