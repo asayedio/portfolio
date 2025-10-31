@@ -4,29 +4,15 @@ A modern, responsive personal portfolio website built with Next.js, TypeScript, 
 
 ---
 
-## ?? IMPORTANT: First Time Setup?
+## ?? Automatic Deployment
 
-**?? [START HERE - Click to see setup instructions](START-HERE.md)**
+This portfolio is configured with **GitHub Actions** for automatic deployment to Vercel.
 
-Or double-click: `setup-node.bat` to auto-install everything!
+? **Every push to `main` branch automatically deploys to production**  
+? **Pull requests get preview deployments**  
+? **No manual deployment steps needed**
 
----
-
-## ?? Quick Deploy to Vercel with GitHub Actions
-
-Want automatic deployments? **Double-click `setup-wizard.bat`** or run:
-
-```powershell
-.\setup-wizard.ps1
-```
-
-This interactive wizard will:
-- ? Get your Vercel IDs
-- ? Guide you to add GitHub secrets
-- ? Set up automatic deployments
-- ? Trigger your first deployment
-
-**See:** [GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md) for detailed instructions.
+**Live Site:** Visit your Vercel dashboard to see your deployment URL
 
 ---
 
@@ -34,36 +20,17 @@ This interactive wizard will:
 
 Before you begin, you need to have Node.js installed on your computer.
 
-### Installing Node.js via NVM (Recommended)
+### Installing Node.js
 
-**NVM (Node Version Manager) allows you to easily manage multiple Node.js versions.**
+**Recommended:** Node.js LTS version 18.x or 20.x
 
-#### For Windows:
+Download and install from [nodejs.org](https://nodejs.org/)
 
-1. **NVM has been installed!** If not, run:
-   ```powershell
-   winget install CoreyButler.NVMforWindows
-   ```
-
-2. **Close and reopen your terminal** (PowerShell as Administrator)
-
-3. **Install Node.js LTS:**
-   ```powershell
-   nvm install 20.11.0
-   nvm use 20.11.0
-   ```
-
-4. **Verify installation:**
-   ```powershell
-   node --version
-   npm --version
-   ```
-
-?? **Need detailed help?** See [NODE-INSTALLATION-GUIDE.md](NODE-INSTALLATION-GUIDE.md) for complete instructions.
-
-#### Alternative: Direct Installation
-
-Download and install Node.js directly from [nodejs.org](https://nodejs.org/) (choose LTS version 18.x or 20.x)
+**Verify installation:**
+```bash
+node --version
+npm --version
+```
 
 ## Features
 
@@ -115,40 +82,39 @@ npm start
 
 ## Deployment
 
-### Option 1: Automatic Deployment with GitHub Actions (Recommended) ??
+### Automatic Deployment (Already Configured) ??
 
-Set up once, deploy automatically on every push!
+This project uses **GitHub Actions** for continuous deployment:
 
-```powershell
-# Run the interactive setup wizard
-.\setup-wizard.ps1
+- ? Push to `main` ? Automatic deployment to Vercel
+- ? Pull requests ? Preview deployments
+- ? Build errors ? Notifications in GitHub Actions
+
+**Monitor deployments:**
+- GitHub Actions: https://github.com/asayedio/portfolio/actions
+- Vercel Dashboard: https://vercel.com/ahmed-sayeds-projects-4065aad7
+
+### Manual Deployment (Alternative)
+
+If you need to deploy manually:
+
+**Option 1: Vercel CLI**
+```bash
+npm install -g vercel
+vercel --prod
 ```
 
-Or see the complete guide: [GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md)
+**Option 2: Vercel Dashboard**
+1. Visit [vercel.com](https://vercel.com)
+2. Import your GitHub repository
+3. Click "Deploy"
 
-**Available Helper Scripts:**
-- `setup-wizard.ps1` - Interactive setup (recommended)
-- `get-vercel-ids.ps1` - Get your Vercel IDs via API
-- `quick-deploy.ps1` - Deploy and get IDs in one step
-- `validate-setup.ps1` - Check your configuration
-
-**See:** [DEPLOYMENT-SCRIPTS-README.md](DEPLOYMENT-SCRIPTS-README.md) for script details.
-
-### Option 2: Manual Deployment to Vercel
-
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Deploy with one click
-
-### Option 3: Deploy to Netlify
-
-1. Push your code to GitHub
-2. Connect your repository on [Netlify](https://netlify.com)
-3. Configure build settings:
+**Option 3: Netlify**
+1. Visit [netlify.com](https://netlify.com)
+2. Connect your repository
+3. Configure:
    - Build command: `npm run build`
    - Publish directory: `.next`
-
-**See:** [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Customization
 
@@ -162,24 +128,71 @@ Update your information in:
 
 ### Styling
 
-- Colors: Edit `tailwind.config.ts`
-- Fonts: Update in `app/layout.tsx`
-- Components: Modify files in `components/`
+- **Colors:** Edit `tailwind.config.ts`
+- **Fonts:** Update in `app/layout.tsx`
+- **Components:** Modify files in `components/`
 
-### Resume
+### Assets
 
-Place your resume PDF in `public/resume.pdf`
+- **Resume:** Place your PDF in `public/resume.pdf`
+- **Avatar:** Replace `public/avatar.jpg` with your photo
+- **Favicon:** Update `public/favicon.ico`
+
+## Project Structure
+
+```
+portfolio/
+??? app/       # Next.js App Router
+?   ??? layout.tsx         # Root layout
+?   ??? page.tsx     # Home page
+?   ??? globals.css        # Global styles
+??? components/        # React components
+??? data/      # Content data (customize here!)
+??? public/                # Static assets
+??? .github/workflows/     # GitHub Actions (deployment)
+??? README.md             # This file
+```
 
 ## ?? Documentation
 
-- **[START-HERE.md](START-HERE.md)** - First time setup guide
-- **[GITHUB-ACTIONS-COMPLETE-GUIDE.md](GITHUB-ACTIONS-COMPLETE-GUIDE.md)** - Automatic deployment setup
-- **[DEPLOYMENT-SCRIPTS-README.md](DEPLOYMENT-SCRIPTS-README.md)** - Helper scripts documentation
-- **[GET-VERCEL-IDS.md](GET-VERCEL-IDS.md)** - Quick reference for Vercel IDs
-- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Manual deployment guide
-- **[CUSTOMIZATION.md](CUSTOMIZATION.md)** - Customization guide
-- **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** - Project structure explained
-- **[NODE-INSTALLATION-GUIDE.md](NODE-INSTALLATION-GUIDE.md)** - Node.js installation help
+- **[CUSTOMIZATION.md](CUSTOMIZATION.md)** - How to customize your portfolio
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Deployment options and guides
+- **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** - Detailed project structure
+
+## Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
+
+## Environment Variables (Optional)
+
+If you need environment variables, create `.env.local`:
+
+```env
+# Example
+NEXT_PUBLIC_API_URL=https://api.example.com
+```
+
+## Troubleshooting
+
+### Build Issues
+
+```bash
+# Clear cache and reinstall
+rm -rf .next node_modules
+npm install
+npm run build
+```
+
+### Deployment Issues
+
+- Check GitHub Actions logs: https://github.com/asayedio/portfolio/actions
+- Verify GitHub Secrets are set correctly
+- Ensure all dependencies are in `package.json`
 
 ## License
 
@@ -187,8 +200,12 @@ MIT License - Feel free to use this template for your own portfolio!
 
 ## Contact
 
-Ahmed Sayed - [asayedio@hotmail.com](mailto:asayedio@hotmail.com)
+**Ahmed Sayed**
 
-LinkedIn: [linkedin.com/in/asayedio](https://www.linkedin.com/in/asayedio/)
+?? Email: [asayedio@hotmail.com](mailto:asayedio@hotmail.com)  
+?? LinkedIn: [linkedin.com/in/asayedio](https://www.linkedin.com/in/asayedio/)  
+?? GitHub: [github.com/asayedio](https://github.com/asayedio)
 
-GitHub: [github.com/asayedio](https://github.com/asayedio)
+---
+
+**Built with ?? using Next.js and TypeScript**
