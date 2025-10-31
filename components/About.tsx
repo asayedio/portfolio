@@ -29,7 +29,7 @@ export default function About() {
    variants={containerVariants}
   >
      <motion.h2 className="section-title" variants={itemVariants}>
-          About Me
+          About Me 2
       </motion.h2>
 
    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
