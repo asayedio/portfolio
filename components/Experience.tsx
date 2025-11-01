@@ -88,7 +88,7 @@ export default function Experience() {
                             key={i}
                             className={`flex items-start gap-2 text-gray-600 dark:text-gray-400 text-sm ${index % 2 === 0 ? 'md:flex-row-reverse md:text-right' : ''}`}
                           >
-                            <span className="text-primary-600 mt-1">•</span>
+                            <span className="text-primary-600 mt-1"> </span>
                             <span>{achievement}</span>
                           </li>
                         ))}
